@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  to: "",
-  token: "",
-  amount: "",
+  to: null,
+  token: null,
+  amount: null,
   toError: null,
   tokenError: null,
   amountError: null,
@@ -74,6 +74,18 @@ export const homeSlice = createSlice({
         ...initialState, ...state, amountError: null, amount: action.payload.amount
       }
       return state;
+    },
+    resetState: (state, action) => {
+      state = {
+        ...state, to: null,
+        token: "0xaB1a4d4f1D656d2450692D237fdD6C7f9146e814",
+        amount: null,
+        toError: null,
+        tokenError: null,
+        amountError: null,
+        basketItems: []
+      }
+      return state;
     }
   },
 })
@@ -81,7 +93,7 @@ function isEmpty(value) {
   return (value == null || value.length === 0);
 }
 
-export const { addToBasket, onToChanged, onTokenChanged, onAmountChanged } = homeSlice.actions
+export const { addToBasket, onToChanged, onTokenChanged, onAmountChanged, resetState } = homeSlice.actions
 
 export const homeState = (state) => state.home
 

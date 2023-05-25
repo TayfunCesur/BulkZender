@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.bulksenderv2"
+    namespace "com.bulkzender"
     defaultConfig {
-        applicationId "com.bulksenderv2"
+        applicationId "com.bulkzender"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

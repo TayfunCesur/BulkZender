@@ -6,7 +6,7 @@ import FontedTextInput from '../components/FontedTextInput';
 import LinearGradient from 'react-native-linear-gradient';
 import { useDispatch, useSelector } from 'react-redux';
 import { onTokenChanged, homeState } from '../reducers/homeSlice'
-
+import SplashScreen from 'react-native-splash-screen'
 
 const HomeScreen = () => {
     const navigation = useNavigation();
@@ -16,6 +16,7 @@ const HomeScreen = () => {
     });
 
     useLayoutEffect(() => {
+        SplashScreen.hide();
         navigation.setOptions({
             headerShown: false
         })
@@ -35,7 +36,7 @@ const HomeScreen = () => {
                     <View className="flex-row flex-1 items-start mt-4 mb-4 ml-2  " >
                         <Image source={require("../assets/wave.png")} className="w-10 h-10 self-center " />
                         <View className="ml-2 mr-2">
-                            <FontedText classname="text-white text-base">Welcome to BulkTransfer!</FontedText>
+                            <FontedText classname="text-white text-base">Welcome to BulkZender!</FontedText>
                             <FontedText classname="text-white opacity-60 text-s">You can send your token to any amount of user in one TX!</FontedText>
                         </View>
                     </View>

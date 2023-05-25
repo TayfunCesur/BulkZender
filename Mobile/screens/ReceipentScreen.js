@@ -143,6 +143,7 @@ const ReceipentScreen = ({ route, navigation }) => {
                                 </View>
 
                                 <TouchableOpacity
+                                    disabled={state.toError != null || state.amountError != null}
                                     ref={buttonRef}
                                     onPress={() => {
                                         addItemsToBasket()
@@ -165,7 +166,7 @@ const ReceipentScreen = ({ route, navigation }) => {
                                         }
                                     }}
                                 >
-                                    <FontedText classname="text-white text-base bg-primaryColor rounded-2xl p-4 self-center" type="sb">Add to basket</FontedText>
+                                    <FontedText classname={`text-white text-base rounded-2xl p-4 self-center ${state.toError == null || state.amountError != null ? "bg-primaryColor" : "bg-gray-500"}`} type="sb">Add to basket</FontedText>
                                 </TouchableOpacity>
 
                             </View>

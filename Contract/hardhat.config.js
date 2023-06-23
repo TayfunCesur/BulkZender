@@ -20,6 +20,5 @@ module.exports = {
   gasReporter: {
     gasPrice: 3,
     enabled: true,
-    showMethodSig: true
   }
 };
